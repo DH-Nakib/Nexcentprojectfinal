@@ -1,0 +1,578 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-family: var(--font-family);
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.align-center {
+  align-items: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+:root {
+  --neutral-white: #fff;
+  --neutral-silver: #f5f7fa;
+  --neutral-grey-blue: #abbed1;
+  --neutral-l-grey: #89939e;
+  --neutral-grey: #717171;
+  --neutral-d-grey: #4d4d4d;
+  --neutral-black: #263238;
+  --neutral-white-stroke: #abbed1;
+  --brand-info: #2194f3;
+  --brand-secondary: #263238;
+  --brand-primary: #4caf4f;
+  --shade-s1: #43a046;
+  --shade-s2: #388e3b;
+  --shade-s3: #237d31;
+  --shade-s4: #1b5e1f;
+  --shade-s5: #103e13;
+  --tint-t1: #66bb69;
+  --tint-t2: #81c784;
+  --tint-t3: #a5d6a7;
+  --tint-t4: #c8e6c9;
+  --tint-t5: #e8f5e9;
+  --action-success: #2e7d31;
+  --action-error: #e53835;
+  --action-warning: #fbc02d;
+  --font-family: 'Inter', sans-serif;
+  --second-family: 'Montserrat', sans-serif;
+}
+.my-btn {
+  margin-top: 32px;
+  display: inline-block;
+  border-radius: 4px;
+  padding: 14px 32px;
+  width: 128px;
+  height: 52px;
+  background: var(--brand-primary);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--neutral-white);
+  transition: 0.3s;
+}
+.my-btn:hover {
+  background-color: var(--neutral-silver);
+  color: var(--brand-primary);
+  box-shadow: 0 8px 16px 0 rgba(171, 190, 209, 0.661);
+}
+.p-heading {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 122%;
+  text-align: center;
+  color: var(--neutral-d-grey);
+}
+.p-p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--neutral-grey);
+}
+
+/* ====== Start Nav Bar ====== */
+nav {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--neutral-silver);
+}
+nav .row {
+  align-items: center;
+  justify-content: space-between;
+}
+nav ul li {
+  display: inline-block;
+  padding: 30px 25px;
+}
+nav ul li a {
+  display: inline-block;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #18191f;
+  position: relative;
+  transition: 0.3s;
+}
+
+nav ul li .dropdown {
+  position: absolute;
+  z-index: 2;
+  background-color: var(--neutral-white);
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  margin-top: 30px;
+}
+nav ul li .dropdown ul li a {
+  width: 150px;
+}
+nav ul li:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  margin-top: 0;
+}
+nav ul li .dropdown ul li {
+  display: block;
+  padding: 10px 10px;
+}
+nav ul li .dropdown ul li a {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #18191f;
+}
+
+nav ul li:nth-child(1) a {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: #18191f;
+}
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background: var(--brand-primary);
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.4s;
+}
+nav ul li > a:hover::after {
+  visibility: visible;
+  opacity: 1;
+  width: 100%;
+}
+nav .signup-btn a {
+  padding: 10px 20px;
+  display: inline-block;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  transition: 0.3s;
+}
+nav .signup-btn .login {
+  color: var(--brand-primary);
+  border-radius: 5px;
+  background-color: var(--neutral-white);
+}
+nav .signup-btn .login:hover {
+  color: var(--neutral-white);
+  background-color: var(--brand-primary);
+  box-shadow: 0 8px 16px 0 rgba(171, 190, 209, 0.661);
+}
+nav .signup-btn .signup {
+  color: var(--neutral-white);
+  background-color: var(--brand-primary);
+  border-radius: 5px;
+}
+nav .signup-btn .signup:hover {
+  background-color: var(--neutral-silver);
+  color: var(--brand-primary);
+  box-shadow: 0 8px 16px 0 rgba(171, 190, 209, 0.661);
+}
+
+/* ====== End Nav Bar ====== */
+
+/* ====== Start Banner Section ====== */
+#banner {
+  padding: 96px 0;
+  background-color: var(--neutral-silver);
+}
+#banner .bannercnt {
+  width: 60%;
+}
+#banner .bannerimg {
+  width: 40%;
+  text-align: center;
+}
+#banner .bannerimg img {
+  max-width: 100%;
+}
+#banner .bannercnt h1 {
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 119%;
+  color: var(--neutral-d-grey);
+}
+#banner .bannercnt h1 span {
+  color: var(--brand-primary);
+}
+#banner .bannercnt p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--neutral-grey);
+}
+
+/* ====== End Banner Section ====== */
+/* ====== Our Clients Start ====== */
+#clients {
+  margin-top: 40px;
+}
+#clients img {
+  width: 1152px;
+  height: 98px;
+}
+#clients .text {
+  text-align: center;
+}
+/* ====== Our Clients End ====== */
+/* ========== Learn More Start  ========= */
+#learnMore {
+  padding: 64px 0;
+}
+#learnMore .learnMoreImg {
+  width: 40%;
+}
+#learnMore .learnMoreImg img {
+  text-align: center;
+}
+#learnMore .learnMoreText {
+  width: 60%;
+}
+#learnMore .learnMoreText .p-heading {
+  text-align: left;
+}
+#learnMore .learnMoreText .p-p {
+  text-align: left;
+}
+#learnMore .learnMoreText .my-btn {
+  width: 151px;
+}
+/* ========== Learn More End  ========= */
+
+/* ====== Our Community Start ====== */
+#Community {
+  padding: 40px 0;
+}
+#Community .CommunityCard {
+  width: calc(33.33% - 128px);
+  margin-top: 16px;
+  padding: 24px 16px;
+  box-shadow: 0 2px 4px 0 rgba(171, 190, 209, 0.2);
+  background: var(--neutral-white);
+  border-radius: 8px;
+  text-align: center;
+  transition: 0.3s;
+}
+#Community .CommunityCard:hover {
+  box-shadow: 0 0 8px 2px var(--brand-primary);
+}
+#Community .CommunityCard h3 {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 129%;
+  text-align: center;
+  color: var(--neutral-d-grey);
+  margin: 8px 16px;
+}
+
+/* ====== Our Community End ====== */
+/* ========== Our Acheivement Start  =========  */
+#acheivement {
+  padding: 32px 0;
+  background-color: var(--neutral-silver);
+}
+#acheivement .heading .p-heading {
+  text-align: left;
+}
+#acheivement .heading .p-heading span {
+  color: var(--brand-primary);
+}
+#acheivement .heading .p-p {
+  text-align: left;
+}
+#acheivement .acheivement-text,
+#acheivement .acheivement-count {
+  width: 50%;
+}
+#acheivement .count .acheivement-text .p-p {
+  text-align: left;
+}
+#acheivement .acheivement-count .acheivement-card {
+  width: 50%;
+  margin-bottom: 40px;
+}
+#acheivement .acheivement-count .acheivement-card .count {
+  margin-left: 16px;
+}
+#acheivement .acheivement-count .acheivement-card .count h5 {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 129%;
+  color: var(--neutral-d-grey);
+}
+#acheivement .acheivement-count .acheivement-card .count p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--neutral-grey);
+  text-align: left;
+}
+#acheivement .acheivement-count .acheivement-card .count p span {
+  color: var(--brand-primary);
+}
+#acheivement .acheivement-count .acheivement-card .count p span {
+  color: var(--brand-primary);
+}
+#acheivement .acheivement-count .acheivement-card .count p span {
+  color: var(--brand-primary);
+}
+/* ========== Our Acheivement End  =========  */
+
+/* ========== Login Start ========== */
+#login {
+  padding: 64px 0;
+}
+#login .learnMoreImg {
+  width: 50%;
+}
+#login .learnMoreImg img {
+  text-align: center;
+}
+#login .learnMoreText {
+  width: 50%;
+}
+#login .learnMoreText .p-heading {
+  text-align: #e7d4e0#60043eleft;
+}
+#login .learnMoreText .p-p {
+  text-align: left;
+}
+#login .learnMoreText .my-btn {
+  width: 151px;
+}
+/* ========== Login End ========== */
+/* ========== Tesla Start ========== */
+#Tesla {
+  padding: 32px 0;
+  background-color: var(--neutral-silver);
+}
+
+#Tesla .TeslaImg {
+  width: 30%;
+  text-align: center;
+}
+#Tesla .TeslaText {
+  width: 70%;
+  padding-left: 40px;
+}
+#Tesla .TeslaText .p-p {
+  text-align: left;
+}
+#Tesla .TeslaText a {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  color: var(--brand-primary);
+  padding: 16px 0 8px 0;
+  display: inline-block;
+}
+#Tesla .TeslaText .row img {
+  padding: 32px 10px 33px 0;
+  text-align: center;
+}
+#Tesla .TeslaText .row a {
+  padding: 40px 0 0 10px;
+}
+/* ========== Tesla End ========== */
+/* ========== Blog Start ========== */
+#blog {
+  padding: 32px 0;
+}
+#blog .heading .p-p {
+  font-weight: 400;
+}
+.blogCard {
+  margin: 16px 12px;
+  width: calc(33.33% - 24px);
+  position: relative;
+}
+.blogCard img {
+  position: relative;
+  width: 100%;
+}
+.blogCard .blogCnt {
+  position: absolute;
+  background-color: var(--neutral-white);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 8px 16px 0 rgba(171, 190, 209, 0.4);
+  background: var(--neutral-silver);
+  left: 26px;
+  right: 26px;
+  transform: translatey(-50%);
+  transition: 0.3s;
+  text-align: center;
+}
+.blogCard:hover .blogCnt {
+  transform: translatey(-60%);
+}
+
+.blogCard .blogCnt p {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--neutral-grey);
+}
+.blogCard .blogCnt a {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  color: var(--brand-primary);
+  display: inline-block;
+  padding: 16px 0;
+}
+/* ========== Blog End ========== */
+/* ========== Demo Start ========== */
+#demo {
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+#demo .demoText {
+  text-align: center;
+}
+#demo .demoText .my-btn {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  border-radius: 4px;
+  padding: 14px 32px;
+  width: 178px;
+  height: 52px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #e7d4d4;
+  color: #ffffff;
+}
+
+.footer {
+  background-color: #8f5a5a;
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer .brand {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.footer .brand img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+.footer .brand p {
+  font-size: 14px;
+  color: #cccccc;
+}
+
+.footer .links {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer .links div {
+  flex: 1;
+  margin-bottom: 20px;
+  min-width: 150px;
+}
+
+.footer .links h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.footer .links a {
+  display: block;
+  font-size: 14px;
+  color: #cccccc;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.footer .links a:hover {
+  color: #ffffff;
+}
+
+.footer .newsletter {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.footer .newsletter input[type='email'] {
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  width: 70%;
+  margin-right: 10px;
+}
+
+.footer .newsletter button {
+  padding: 10px;
+  font-size: 14px;
+  background-color: #00bfff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footer .newsletter button:hover {
+  background-color: #008fcc;
+}
+
+.footer .social {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.footer .social a {
+  color: #cccccc;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.footer .social a:hover {
+  color: #ffffff;
+}
+/* ========== Demo End ========== */
